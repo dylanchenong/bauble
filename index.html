@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curio — Unlock your phone with curiosity</title>
+  <meta name="description" content="Curio blocks your distracting apps on a schedule you set. Earn your screen time back by reading a short fact and answering one question. Includes a 401-card MCAT Psych/Soc pack and Anki deck import.">
+  <meta property="og:title" content="Curio — Unlock your phone with curiosity">
+  <meta property="og:description" content="Block distracting apps. Read a fact, answer a question, earn your screen time. A pocket curiosity cabinet for iOS.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#14213D">
+  <link rel="icon" type="image/png" href="assets/app-icon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <nav class="site-nav">
+    <div class="container">
+      <a class="brand" href="#top">
+        <img src="assets/wordmark.png" alt="">
+        <span>Curio</span>
+      </a>
+      <div class="nav-links">
+        <a href="#how">How it works</a>
+        <a href="#features">Features</a>
+        <a href="#mcat">MCAT</a>
+        <a href="#anki">Anki</a>
+        <a href="#packs">Packs</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <span class="pill">Coming soon</span>
+    </div>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero grain" id="top">
+    <div class="container">
+      <div>
+        <span class="eyebrow">A pocket curiosity cabinet</span>
+        <h1>Your phone, locked behind a <em>curiosity.</em></h1>
+        <p class="lede">Curio blocks your distracting apps on a schedule you set. To get back in early, read one short, genuinely interesting fact and answer a single question about it. Get it right — the fact joins your collection, and you earn your screen time.</p>
+        <div class="hero-ctas">
+          <span class="btn-gold">Coming soon to the App&nbsp;Store</span>
+          <a class="btn-ghost" href="#how">See how it works</a>
+        </div>
+        <p class="hero-footnote">iOS &middot; Offline-first &middot; No ads, no analytics</p>
+      </div>
+
+      <!-- signature specimen-card flip -->
+      <div class="specimen-scene" aria-label="Animated example of a Curio specimen card being collected">
+        <div class="specimen-flip" id="specimenFlip">
+          <div class="card-face card-front">
+            <div class="card-meta">
+              <span class="tag">Specimen No. 214</span>
+              <span class="tag"><span class="dot">&#9670;</span> Fun Facts</span>
+            </div>
+            <h3>Honey Never Spoils</h3>
+            <p class="fact-body">Archaeologists have opened Egyptian tombs and found pots of honey over 3,000 years old — still perfectly edible. Honey's low moisture and high acidity make it a place where almost nothing can grow.</p>
+            <div class="card-rule"></div>
+            <p class="question">Why can honey last for millennia without spoiling?</p>
+            <div class="choice" id="correctChoice">Low moisture and acidity stop microbes from growing</div>
+            <div class="choice">Bees add a natural preservative wax</div>
+            <div class="choice">It slowly ferments into a stable syrup</div>
+          </div>
+          <div class="card-face card-back">
+            <div class="stamp">Collected</div>
+            <span class="stamp-no">Specimen No. 214 &middot; Fun Facts</span>
+            <span class="back-unlock">+15 minutes unlocked</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ HOW IT WORKS ============ -->
+  <section id="how">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">The loop</span>
+        <h2>Screen time you have to earn — and actually enjoy earning.</h2>
+        <p>No willpower required, no guilt-trip graphs. Just a small toll of curiosity between you and the scroll.</p>
+      </div>
+      <div class="steps">
+        <div class="step-card reveal" style="--d:0s">
+          <span class="step-no">No. 1</span>
+          <h3>Block on your schedule</h3>
+          <p>Pick the apps that eat your time and set weekly blocking windows — school hours, work hours, whenever. Built on Apple's Screen Time frameworks, with a pause toggle for days off.</p>
+        </div>
+        <div class="step-card reveal" style="--d:0.12s">
+          <span class="step-no">No. 2</span>
+          <h3>Read a specimen</h3>
+          <p>Open a blocked app and you'll meet a closed drawer instead. Open it to draw a short, genuinely interesting fact — a couple of sentences on something a little obscure.</p>
+        </div>
+        <div class="step-card reveal" style="--d:0.24s">
+          <span class="step-no">No. 3</span>
+          <h3>Answer to unlock</h3>
+          <p>One question checks you actually read it. Get it right: the fact is stamped into your collection and your apps unlock for a duration you choose. Get it wrong: learn why, then try a fresh fact.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURES ============ -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">In the cabinet</span>
+        <h2>Everything a well-kept collection needs.</h2>
+      </div>
+      <div class="feature-grid">
+        <div class="feature reveal" style="--d:0s">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+          <h3>Scheduled blocking</h3>
+          <p>Weekly blocking windows per day, powered by Apple's Family Controls. Outside your windows, your apps are simply yours.</p>
+        </div>
+        <div class="feature reveal" style="--d:0.06s">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5.5C10.5 4 8.2 3.5 5.5 3.5v14c2.7 0 5 .5 6.5 2 1.5-1.5 3.8-2 6.5-2v-14c-2.7 0-5 .5-6.5 2z"/><path d="M12 5.5v14"/></svg></div>
+          <h3>Fact-quiz unlock</h3>
+          <p>Read a short fact, answer one question, earn back a configurable slice of screen time. Wrong answers show the explanation — then a new fact.</p>
+        </div>
+        <div class="feature reveal" style="--d:0.12s">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4" width="17" height="5" rx="1.2"/><path d="M5 9v9.5A1.5 1.5 0 0 0 6.5 20h11a1.5 1.5 0 0 0 1.5-1.5V9"/><path d="M10 13h4"/></svg></div>
+          <h3>Specimen collection</h3>
+          <p>Every fact you collect becomes a numbered specimen card, filed into category drawers. A collection that's genuinely nice to browse.</p>
+        </div>
+        <div class="feature reveal" style="--d:0.18s">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19h16"/><path d="M5 15l4-5 3.5 3L18 6"/><circle cx="18" cy="6" r="1.3" fill="currentColor" stroke="none"/></svg></div>
+          <h3>Dashboard &amp; streaks</h3>
+          <p>Trends over time, current streak, accuracy rate, total specimens. Quiet stats — no confetti, no shame spirals.</p>
+        </div>
+        <div class="feature reveal" style="--d:0s">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 1-6.36 2.64"/><path d="M12 12V7"/></svg></div>
+          <h3>Focus timer dial</h3>
+          <p>A tactile ring dial for deliberate focus sessions when you want to work with the clock, not against your apps.</p>
+        </div>
+        <div class="feature reveal" style="--d:0.06s">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c1 3-2 4.5-2 7a4.5 4.5 0 0 0 9 .5c1.8 1.5 2.5 3.4 2.5 5A7.5 7.5 0 0 1 6.5 17c0-4 3.5-5.5 5.5-14z" transform="translate(-1.5 1)"/></svg></div>
+          <h3>Hard mode</h3>
+          <p>For the truly committed: stricter unlocks that keep the toll honest when easy mode stops being a deterrent.</p>
+        </div>
+        <div class="feature reveal" style="--d:0.12s">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 13.5L3 11l1.5-1.5L11 10l4-4.5c.6-.6 1.6-.6 2.1 0 .6.6.6 1.5 0 2.1L12.5 12l.5 6.5L11.5 20l-2.5-7.5"/></svg></div>
+          <h3>Offline-first &amp; private</h3>
+          <p>The whole block-and-quiz loop works in airplane mode. No ads, no analytics SDKs, and your Screen Time data never leaves your device.</p>
+        </div>
+        <div class="feature reveal" style="--d:0.18s">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18a4 4 0 0 1-.5-7.97A5.5 5.5 0 0 1 17.2 8.6 4.2 4.2 0 0 1 17 17H7z"/><path d="M12 11v6M9.5 14.5L12 17l2.5-2.5"/></svg></div>
+          <h3>Optional sync</h3>
+          <p>Sign in with Apple to back up your collection and quiz history across devices. Entirely optional — the core app never needs an account.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MCAT SPOTLIGHT ============ -->
+  <section class="spotlight" id="mcat">
+    <div class="container">
+      <div class="copy reveal">
+        <span class="eyebrow">Featured drawer</span>
+        <h2>The MCAT Psych/Soc pack: study every time you try to scroll.</h2>
+        <p><strong>401 question-first behavioral-sciences cards</strong> covering sensation &amp; perception, states of consciousness &amp; sleep, and psychoactive drugs — written to test recall first, then teach.</p>
+        <p>Set Curio to guard Instagram and TikTok, choose the MCAT drawer, and every "just five minutes" becomes a review rep. You answer first; if you miss, the explanation of the right answer appears before you move on. Prep that happens at the exact moment you were about to waste time.</p>
+        <div class="chips">
+          <span class="chip">Sensation &amp; Perception</span>
+          <span class="chip">Consciousness &amp; Sleep</span>
+          <span class="chip">Psychoactive Drugs</span>
+        </div>
+        <div class="mcat-stat">
+          <div><strong>401</strong><span>Specimen cards</span></div>
+          <div><strong>4</strong><span>Choices per question</span></div>
+          <div><strong>0</strong><span>Excuses left</span></div>
+        </div>
+      </div>
+      <div class="reveal" style="--d:0.15s">
+        <div class="sample-card">
+          <div class="card-meta">
+            <span class="tag">MCAT Psych/Soc</span>
+            <span class="tag">Question-first</span>
+          </div>
+          <p class="question">Retinal disparity and convergence both give us a sense of depth. What kind of cues are they?</p>
+          <div class="choice correct-picked">Binocular cues, because they require both eyes</div>
+          <div class="choice">Monocular cues, because one eye is enough</div>
+          <div class="choice">Gestalt cues, because they group objects</div>
+          <div class="choice">Constancy cues, because they stabilize perception</div>
+          <p class="explain">Retinal disparity and convergence are binocular cues: both depend on comparing input from two eyes to judge depth.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ANKI SPOTLIGHT ============ -->
+  <section class="spotlight anki grain" id="anki">
+    <div class="container">
+      <div class="anki-visual reveal" aria-hidden="true">
+        <span class="apkg-chip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 3H7a1.5 1.5 0 0 0-1.5 1.5v15A1.5 1.5 0 0 0 7 21h10a1.5 1.5 0 0 0 1.5-1.5V8.5L13 3z"/><path d="M13 3v5.5h5.5"/></svg>
+          biochem-master-deck.apkg
+        </span>
+        <svg class="import-arrow" width="34" height="42" viewBox="0 0 34 42" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 2v32M7 26l10 10 10-10"/></svg>
+        <div class="anki-fan">
+          <div class="fan-card fan-1">
+            <span class="tag">Card 1 / 1,204</span>
+            <p class="cloze-line">Amino acids are joined by <span class="cloze-gap">&nbsp;</span> bonds formed in a condensation reaction.</p>
+          </div>
+          <div class="fan-card fan-2">
+            <span class="tag">Card 2 / 1,204</span>
+            <p class="cloze-line">The rate-limiting enzyme of glycolysis is <span class="cloze-gap">&nbsp;</span>.</p>
+          </div>
+          <div class="fan-card fan-3">
+            <span class="tag">Card 3 / 1,204</span>
+            <p class="cloze-line">Competitive inhibitors raise K<sub>m</sub> while V<sub>max</sub> stays <span class="cloze-gap">&nbsp;</span>.</p>
+          </div>
+        </div>
+      </div>
+      <div class="copy reveal" style="--d:0.15s">
+        <span class="eyebrow">Bring your own cards</span>
+        <h2>Your Anki decks, filed straight into the cabinet.</h2>
+        <p>Years of carefully built Anki decks shouldn't live in a separate app from your screen-time goals. Import any <strong>.apkg file</strong> and Curio turns it into flashcard drawers you can study — or put between yourself and your distractions.</p>
+        <ul class="anki-list">
+          <li>
+            <span class="li-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg></span>
+            <span><strong>Full .apkg import</strong> — decks, notes, and media parsed directly from the file you export out of Anki.</span>
+          </li>
+          <li>
+            <span class="li-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg></span>
+            <span><strong>Cloze deletions supported</strong> — your <code>{{c1::…}}</code> cards render as proper fill-in-the-blank prompts.</span>
+          </li>
+          <li>
+            <span class="li-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg></span>
+            <span><strong>Spaced repetition built in</strong> — cards are scheduled so the ones you're about to forget come back first.</span>
+          </li>
+          <li>
+            <span class="li-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg></span>
+            <span><strong>100% on-device</strong> — imported decks are processed and stored on your iPhone and never uploaded anywhere.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PACK SHELF ============ -->
+  <section id="packs">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">The drawers</span>
+        <h2>Packs included with the app.</h2>
+        <p>Hand-written fact banks that ship with Curio and work fully offline — with more drawers on the way.</p>
+      </div>
+      <div class="packs-grid">
+        <div class="pack-card reveal" style="--d:0s">
+          <div class="pack-cover"><img src="assets/pack-psych-soc.jpg" alt="MCAT Psych/Soc pack cover art" loading="lazy"></div>
+          <div class="pack-body">
+            <span class="tag">401 specimens</span>
+            <h3>MCAT Psych/Soc</h3>
+            <p>Question-first behavioral sciences review: perception, consciousness, sleep, and psychoactive drugs.</p>
+          </div>
+        </div>
+        <div class="pack-card reveal" style="--d:0.08s">
+          <div class="pack-cover"><img src="assets/pack-finance.jpg" alt="Personal Finance pack cover art" loading="lazy"></div>
+          <div class="pack-body">
+            <span class="tag">164 specimens</span>
+            <h3>Personal Finance</h3>
+            <p>The math of growing money — time value of money, compound interest, and future value, one card at a time.</p>
+          </div>
+        </div>
+        <div class="pack-card reveal" style="--d:0.16s">
+          <div class="pack-cover"><img src="assets/pack-fun-facts.jpg" alt="Fun Facts pack cover art" loading="lazy"></div>
+          <div class="pack-body">
+            <span class="tag">113 specimens</span>
+            <h3>Fun Facts</h3>
+            <p>A cabinet of drawers full of the small, strange truths that don't fit anywhere else.</p>
+          </div>
+        </div>
+        <div class="pack-card reveal" style="--d:0.24s">
+          <div class="pack-cover"><img src="assets/pack-geometry.jpg" alt="Geometry pack cover art" loading="lazy"></div>
+          <div class="pack-body">
+            <span class="tag">Starter drawer</span>
+            <h3>Geometry</h3>
+            <p>Shapes, angles, and the surprising rules that bend once you leave the flat page.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Field notes</span>
+        <h2>Questions, answered.</h2>
+      </div>
+      <div class="faq-list reveal">
+        <details class="faq-item">
+          <summary>Does Curio need an internet connection?</summary>
+          <p class="faq-a">No. Blocking, the fact-quiz unlock loop, all bundled packs, and imported flashcards work entirely offline — airplane mode included. Only the optional account sync and subscription verification touch the network.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What happens if I answer a question wrong?</summary>
+          <p class="faq-a">You see the correct answer and a short explanation, and the apps stay locked. Then you draw a different fact — no re-attempting the same question, because the point is that you actually read the card.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can I pause blocking for a day off?</summary>
+          <p class="faq-a">Yes, with a plainly visible pause toggle. Curio is a self-management tool, not a warden — fighting you isn't the goal.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can Curio see which apps I block or use?</summary>
+          <p class="faq-a">No. App selections are stored as opaque tokens by Apple's Family Controls framework, and all Screen Time data stays on your device. It is never transmitted to us or anyone else — we couldn't read it even if we wanted to.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Is Curio affiliated with the MCAT or the AAMC?</summary>
+          <p class="faq-a">No. The MCAT Psych/Soc pack is independent study material. Curio is not affiliated with, endorsed by, or sponsored by the AAMC or any examination body, and we make no promises about test scores.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CLOSING CTA ============ -->
+  <section class="closing grain">
+    <div class="container">
+      <span class="eyebrow">Opening soon</span>
+      <h2>Start collecting your screen time back.</h2>
+      <p>Curio is coming soon to the App Store for iPhone. Until then, the cabinet is being carefully packed.</p>
+      <span class="btn-gold">Coming soon to the App&nbsp;Store</span>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-brand">
+        <img src="assets/wordmark.png" alt="">
+        <span>Curio</span>
+      </div>
+      <div class="footer-links">
+        <a href="terms.html">Terms of Use</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="mailto:dylan.chen.ong@gmail.com">Contact</a>
+      </div>
+      <span class="footer-copy">&copy; <span id="year">2026</span> Curio</span>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) {
+        if (e.isIntersecting) { e.target.classList.add('revealed'); io.unobserve(e.target); }
+      }
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // Signature specimen-card flip: pick the right answer, stamp COLLECTED, reset, repeat.
+    const flip = document.getElementById('specimenFlip');
+    const correct = document.getElementById('correctChoice');
+    function runCycle() {
+      correct.classList.add('correct-picked');
+      setTimeout(() => flip.classList.add('flipped'), 900);
+      setTimeout(() => {
+        flip.classList.remove('flipped');
+        correct.classList.remove('correct-picked');
+      }, 6400);
+    }
+    if (reduceMotion) {
+      // one gentle crossfade to the collected state, no loop
+      setTimeout(() => { correct.classList.add('correct-picked'); flip.classList.add('flipped'); }, 1800);
+    } else {
+      setTimeout(runCycle, 1400);
+      setInterval(runCycle, 9400);
+    }
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

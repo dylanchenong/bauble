@@ -1,6 +1,6 @@
-# Curio — landing page
+# Bauble — landing page
 
-Marketing site for **Curio**, an iOS app that blocks distracting apps on a
+Marketing site for **Bauble**, an iOS app that blocks distracting apps on a
 schedule and unlocks them when you read a short fact and answer one quiz
 question about it.
 

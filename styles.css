@@ -1,7 +1,7 @@
 /* ============================================================
-   Curio — Pocket Curio Cabinet design system
+   Bauble — card system
    Palette (exact tokens from the app spec):
-   ink-navy #14213D · parchment #EFE6D8 · curio-gold #C9A227
+   ink-navy #14213D · parchment #EFE6D8 · gold #C9A227
    moss #4C6444 · ember #E1603D · ash #8B8378
    ============================================================ */
 
@@ -257,19 +257,19 @@ a { color: inherit; }
   color: var(--ash);
 }
 
-/* ---------- the specimen card (signature animation) ---------- */
-.specimen-scene {
+/* ---------- the fact card (signature animation) ---------- */
+.card-scene {
   perspective: 1400px;
   justify-self: center;
   width: min(400px, 100%);
 }
-.specimen-flip {
+.card-flip {
   position: relative;
   width: 100%;
   transform-style: preserve-3d;
   transition: transform 0.9s cubic-bezier(0.32, 0, 0.15, 1);
 }
-.specimen-flip.flipped { transform: rotateY(180deg); }
+.card-flip.flipped { transform: rotateY(180deg); }
 
 .card-face {
   backface-visibility: hidden;
@@ -359,7 +359,7 @@ a { color: inherit; }
   mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='r'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.25' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.6 -0.25'/%3E%3CfeComposite operator='in' in2='SourceGraphic'/%3E%3C/filter%3E%3Crect width='120' height='120' fill='%23fff' filter='url(%23r)'/%3E%3C/svg%3E");
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='r'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.25' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.6 -0.25'/%3E%3CfeComposite operator='in' in2='SourceGraphic'/%3E%3C/filter%3E%3Crect width='120' height='120' fill='%23fff' filter='url(%23r)'/%3E%3C/svg%3E");
 }
-.specimen-flip.flipped .stamp {
+.card-flip.flipped .stamp {
   animation: stamp-down 0.5s cubic-bezier(0.2, 1.4, 0.4, 1) 0.55s forwards;
 }
 @keyframes stamp-down {
@@ -375,7 +375,7 @@ a { color: inherit; }
   opacity: 0;
   transition: opacity 0.4s ease 1.15s;
 }
-.specimen-flip.flipped .stamp-no { opacity: 1; }
+.card-flip.flipped .stamp-no { opacity: 1; }
 .back-unlock {
   margin-top: 18px;
   font-family: var(--font-mono);
@@ -386,7 +386,7 @@ a { color: inherit; }
   opacity: 0;
   transition: opacity 0.4s ease 1.35s;
 }
-.specimen-flip.flipped .back-unlock { opacity: 1; }
+.card-flip.flipped .back-unlock { opacity: 1; }
 
 @media (max-width: 880px) {
   .hero .container {
@@ -395,7 +395,7 @@ a { color: inherit; }
     padding-top: 64px;
     padding-bottom: 80px;
   }
-  .specimen-scene { justify-self: start; }
+  .card-scene { justify-self: start; }
 }
 
 /* ============================================================
@@ -902,14 +902,14 @@ section { padding: 96px 0; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { transform: none; transition: opacity 0.5s ease; }
-  .specimen-flip { transition: none; }
-  .specimen-flip.flipped { transform: none; }
-  .specimen-flip.flipped .card-front { visibility: hidden; }
+  .card-flip { transition: none; }
+  .card-flip.flipped { transform: none; }
+  .card-flip.flipped .card-front { visibility: hidden; }
   .card-back { transform: none; visibility: hidden; }
-  .specimen-flip.flipped .card-back { visibility: visible; }
-  .specimen-flip.flipped .stamp { animation: none; opacity: 1; transform: rotate(-7deg) scale(1); }
+  .card-flip.flipped .card-back { visibility: visible; }
+  .card-flip.flipped .stamp { animation: none; opacity: 1; transform: rotate(-7deg) scale(1); }
   .step-card:hover, .feature:hover, .pack-card:hover,
-  .sample-card:hover, .specimen-flip, .fan-card { transform: none !important; }
+  .sample-card:hover, .card-flip, .fan-card { transform: none !important; }
   .anki-visual:hover .fan-1, .anki-visual:hover .fan-3 { transform: none; }
   * { animation-duration: 0.01ms !important; transition-duration: 0.2s !important; }
 }

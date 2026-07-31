@@ -13,9 +13,14 @@
   --parchment-line: #D9CDB6;
   --gold: #C9A227;
   --gold-soft: rgba(201, 162, 39, 0.14);
+  /* Gold reads at 6.6:1 on navy but only 2.0:1 on parchment, so text-on-light
+     uses a darkened gold; --gold stays for dark grounds, rules, and icons. */
+  --gold-text: #796117;
   --moss: #4C6444;
   --ember: #E1603D;
-  --ash: #8B8378;
+  /* Muted greys, split by ground so both clear 4.5:1 for small text. */
+  --ash: #69635B;
+  --ash-on-dark: #938C82;
   --ink-text: #232323;
   --navy-text: #C8CEDD;
 
@@ -96,8 +101,10 @@ a { color: inherit; }
   font-weight: 700;
   letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--gold-text);
 }
+/* on the dark grounds the full gold has plenty of contrast */
+.hero .eyebrow, .closing .eyebrow, .anki .eyebrow { color: var(--gold); }
 .eyebrow::before {
   content: "";
   width: 34px;
@@ -280,7 +287,7 @@ a { color: inherit; }
   font-size: 11px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--ash);
+  color: var(--ash-on-dark);
 }
 
 /* ---------- the fact card (signature animation) ---------- */
@@ -327,7 +334,7 @@ a { color: inherit; }
   margin-bottom: 16px;
 }
 .card-meta .dot { color: var(--gold); }
-.card-face h3 {
+.card-face .card-title {
   font-family: var(--font-display);
   font-size: 23px;
   font-weight: 600;
@@ -371,9 +378,9 @@ a { color: inherit; }
 
 /* the COLLECTED stamp */
 .stamp {
-  border: 3px solid var(--gold);
+  border: 3px solid var(--gold-text);
   border-radius: 8px;
-  color: var(--gold);
+  color: var(--gold-text);
   font-family: var(--font-mono);
   font-weight: 700;
   font-size: 26px;
@@ -445,14 +452,16 @@ section { padding: 96px 0; }
 .on-dark .section-head h2 { color: var(--parchment); }
 .on-dark .section-head p { color: var(--navy-text); }
 
-/* scroll reveal */
-.reveal {
+/* Scroll reveal. Scoped to .js — which the page sets on <html> before paint —
+   so that without JavaScript the content is simply visible rather than stuck
+   at opacity 0 with nothing left to reveal it. */
+.js .reveal {
   opacity: 0;
   transform: translateY(22px);
   transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.2, 0.7, 0.3, 1);
   transition-delay: var(--d, 0s);
 }
-.reveal.revealed { opacity: 1; transform: none; }
+.js .reveal.revealed { opacity: 1; transform: none; }
 
 /* ============================================================
    HOW IT WORKS
@@ -476,7 +485,7 @@ section { padding: 96px 0; }
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.22em;
-  color: var(--gold);
+  color: var(--gold-text);
   border: 1px solid rgba(201, 162, 39, 0.5);
   border-radius: 4px;
   display: inline-block;
@@ -695,8 +704,8 @@ section { padding: 96px 0; }
 .cloze-gap {
   display: inline-block;
   min-width: 74px;
-  border-bottom: 2px solid var(--gold);
-  color: var(--gold);
+  border-bottom: 2px solid var(--gold-text);
+  color: var(--gold-text);
   font-family: var(--font-mono);
   font-size: 12px;
   text-align: center;
@@ -783,7 +792,7 @@ section { padding: 96px 0; }
   content: "+";
   font-family: var(--font-mono);
   font-size: 18px;
-  color: var(--gold);
+  color: var(--gold-text);
   transition: transform 0.25s ease;
   flex-shrink: 0;
 }
@@ -829,7 +838,7 @@ section { padding: 96px 0; }
 
 .site-footer {
   background: var(--ink-deep);
-  color: var(--ash);
+  color: var(--ash-on-dark);
   border-top: 1px solid rgba(239, 230, 216, 0.1);
   padding: 40px 0;
 }
@@ -855,7 +864,7 @@ section { padding: 96px 0; }
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--ash);
+  color: var(--ash-on-dark);
   text-decoration: none;
   transition: color 0.25s ease;
 }
@@ -913,7 +922,7 @@ section { padding: 96px 0; }
 .legal-doc li { margin-bottom: 9px; font-size: 16px; color: #3B372F; }
 .legal-doc strong { color: var(--ink-navy); }
 .legal-doc a { color: var(--moss); text-decoration-color: rgba(76,100,68,0.4); }
-.legal-doc a:hover { color: var(--gold); }
+.legal-doc a:hover { color: var(--gold-text); }
 .legal-doc hr {
   border: none;
   border-top: 1px solid var(--parchment-line);
@@ -927,7 +936,7 @@ section { padding: 96px 0; }
    ============================================================ */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .reveal { transform: none; transition: opacity 0.5s ease; }
+  .js .reveal { transform: none; transition: opacity 0.5s ease; }
   .card-flip { transition: none; }
   .card-flip.flipped { transform: none; }
   .card-flip.flipped .card-front { visibility: hidden; }

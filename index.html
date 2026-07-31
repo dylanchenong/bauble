@@ -15,10 +15,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
-  <a class="skip-link" href="#top">Skip to content</a>
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- ============ NAV ============ -->
   <nav class="site-nav">
@@ -39,8 +40,10 @@
     </div>
   </nav>
 
+  <main id="main" tabindex="-1">
+
   <!-- ============ HERO ============ -->
-  <header class="hero grain" id="top" tabindex="-1">
+  <header class="hero grain" id="top">
     <div class="container">
       <div>
         <span class="eyebrow">A pocketful of small treasures</span>
@@ -61,7 +64,7 @@
               <span class="tag">Fact #214</span>
               <span class="tag"><span class="dot">&#9670;</span> Fun Facts</span>
             </div>
-            <h3>Honey Never Spoils</h3>
+            <p class="card-title">Honey Never Spoils</p>
             <p class="fact-body">Archaeologists have opened Egyptian tombs and found pots of honey over 3,000 years old — still perfectly edible. Honey's low moisture and high acidity make it a place where almost nothing can grow.</p>
             <div class="card-rule"></div>
             <p class="question">Why can honey last for millennia without spoiling?</p>
@@ -335,6 +338,8 @@
       <span class="btn-gold">Coming soon to the App&nbsp;Store</span>
     </div>
   </section>
+
+  </main>
 
   <!-- ============ FOOTER ============ -->
   <footer class="site-footer">

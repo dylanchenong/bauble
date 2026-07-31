@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessibility Statement — Bauble</title>
+  <meta name="description" content="Accessibility Statement for the Bauble iOS app and website.">
+  <meta name="theme-color" content="#14213D">
+  <link rel="icon" type="image/png" href="assets/app-icon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="legal-page">
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav class="site-nav">
+    <div class="container">
+      <a class="brand" href="index.html">
+        <img src="assets/wordmark.png" alt="">
+        <span>Bauble</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html#features">Features</a>
+        <a href="index.html#packs">Packs</a>
+        <a href="index.html#faq">FAQ</a>
+      </div>
+      <span class="pill">Coming soon</span>
+    </div>
+  </nav>
+
+  <main class="legal-doc" id="main" tabindex="-1">
+    <span class="eyebrow">Accessibility</span>
+    <h1>Bauble Accessibility Statement</h1>
+    <p class="effective">Last updated: July 30, 2026</p>
+    <p>Bauble is a tool for taking back your attention. That is worth very little if the tool itself is hard to use. We want Bauble to work for people who navigate with VoiceOver, who need larger text, who find motion uncomfortable, who use Switch Control or Voice Control, and who read best at high contrast.</p>
+    <p>This statement describes where we are today — honestly, including what does not work yet — and how to tell us when we have fallen short. It covers both the <strong>Bauble iOS app</strong> and <strong>this website</strong>.</p>
+    <hr>
+
+    <h2>1. The standard we hold ourselves to</h2>
+    <p>For this website, our target is the <a href="https://www.w3.org/TR/WCAG22/">Web Content Accessibility Guidelines (WCAG) 2.2, Level AA</a>. For the iOS app, our target is full support for Apple's system accessibility features, as described in Apple's <a href="https://developer.apple.com/accessibility/">accessibility guidance</a> — because the features people already rely on across iOS should keep working inside Bauble, without us reinventing them.</p>
+    <p>These are targets, not certifications. See Section 5 for our current conformance status.</p>
+
+    <h2>2. The Bauble iOS app</h2>
+    <p>Bauble is designed around iOS's built-in accessibility features rather than a separate "accessibility mode." Specifically:</p>
+    <ul>
+      <li><strong>VoiceOver.</strong> Fact cards, answer choices, blocking rules, and the focus timer are built with labels and traits so they can be read and operated with VoiceOver. Answering a quiz question, collecting a fact, and starting or stopping a session do not require sight.</li>
+      <li><strong>Dynamic Type.</strong> Fact text, questions, and answer choices scale with your system text size, including the larger accessibility sizes. Card layouts are designed to grow and reflow rather than clip text.</li>
+      <li><strong>Reduce Motion.</strong> When Reduce Motion is enabled in iOS, card flips, stamps, and transitions become crossfades or are removed entirely. Nothing you need is communicated only through movement.</li>
+      <li><strong>Color is never the only signal.</strong> Correct and incorrect answers are conveyed in words — with a written explanation of the right answer — not by color alone. Blocking state, streaks, and rule status carry text labels alongside any color.</li>
+      <li><strong>No timed pressure on the quiz.</strong> There is no countdown on reading a fact or choosing an answer. You can take as long as you need, and a wrong answer costs you a new card, not a penalty clock.</li>
+      <li><strong>The focus timer dial has a non-gestural alternative.</strong> The dial is traceable by touch, but the same duration can be set without a precise drag, so a session never depends on fine motor control.</li>
+      <li><strong>Contrast.</strong> Bauble's parchment-and-navy palette was chosen to hold up at normal-body-text contrast ratios, and it respects the system Increase Contrast setting.</li>
+      <li><strong>Offline-first.</strong> The whole block-and-quiz loop works without a network connection, so nobody is locked out of their own device by a slow or missing connection.</li>
+    </ul>
+    <p><strong>A note about blocking and lockouts.</strong> Bauble deliberately puts a step between you and a blocked app, and Hard Mode deliberately removes the early exit. We think that friction is the point — but friction is not the same for everyone. Blocking rules can be paused at any time, Hard Mode is off by default and always opt-in, and no rule can prevent you from reaching iOS's own emergency features, Settings, or the accessibility shortcuts built into your device.</p>
+
+    <h2>3. This website</h2>
+    <p>This site is plain HTML and CSS with a small amount of JavaScript. It is built so that:</p>
+    <ul>
+      <li>Content is marked up semantically — real headings in order, real lists, real landmarks — so screen readers and reader modes can make sense of it.</li>
+      <li>Every page, link, and control is reachable and operable with a keyboard alone, with a visible focus indicator, and a "Skip to content" link is the first thing a keyboard user reaches.</li>
+      <li>The animated fact card on the home page is an illustrative example, not a control. Its text is real text and can be read by a screen reader, nothing on the page depends on watching it animate, and it stops moving when Reduce Motion is enabled.</li>
+      <li>Images are either given meaningful alternative text or marked as decorative so they are skipped rather than announced as noise.</li>
+      <li>Text reflows down to small screens and up to 200% zoom without loss of content, and no information is presented only in an image of text.</li>
+      <li>Nothing on this site flashes, auto-plays audio, or moves without you asking it to.</li>
+      <li>JavaScript is used only for scroll reveals, the decorative card animation, and the copyright year. With JavaScript disabled, every word on every page is still readable.</li>
+    </ul>
+
+    <h2>4. Known limitations</h2>
+    <p>We would rather list these than pretend they aren't there. As of the date above:</p>
+    <ul>
+      <li><strong>No independent audit has been performed.</strong> Everything in this statement is our own assessment (see Section 6).</li>
+      <li><strong>Anki deck import.</strong> Imported decks are authored by other people. Bauble renders their contents faithfully, which means an imported deck with unlabeled images, poor contrast, or text baked into pictures will carry those problems into the app. We cannot fix a deck we did not write.</li>
+      <li><strong>Screen Time app pickers.</strong> The screen where you choose which apps to block is provided by Apple's Family Controls framework. Its behavior — including its accessibility behavior — is Apple's, and we cannot modify it.</li>
+      <li><strong>The focus timer dial</strong> is a custom control. Its alternative input path works, but the dial gesture itself is still easier with a fine pointer than with Switch Control, and we consider this unfinished.</li>
+      <li><strong>Older content packs</strong> were written before we settled on our plain-language guidelines, so a few early cards are denser than we would write them today. We are revising them pack by pack.</li>
+      <li><strong>This website's fact-card animation</strong> uses 3D transforms that a small number of older browsers render imperfectly. The text underneath remains readable in all cases.</li>
+    </ul>
+
+    <h2>5. Conformance status</h2>
+    <p>This website is <strong>partially conformant</strong> with WCAG 2.2 Level AA. "Partially conformant" means most of the standard is met, but some content — the items in Section 4 — does not fully conform.</p>
+    <p>The Bauble iOS app has not been formally certified against any accessibility standard. We assess it against Apple's accessibility guidance and the WCAG 2.2 Level AA success criteria that apply meaningfully to native mobile apps.</p>
+
+    <h2>6. How we assess accessibility</h2>
+    <p>We evaluate Bauble through self-assessment, using:</p>
+    <ul>
+      <li>Manual testing with VoiceOver on a physical iPhone, not just the simulator;</li>
+      <li>Manual keyboard-only walkthroughs of every page on this site;</li>
+      <li>Testing at the largest Dynamic Type sizes and at 200% browser zoom;</li>
+      <li>Contrast checks against WCAG ratios for every text and background pairing in our palette;</li>
+      <li>Testing with Reduce Motion, Increase Contrast, and Bold Text enabled.</li>
+    </ul>
+    <p>We have not yet commissioned a third-party accessibility audit. When we do, we will say so here and publish what it found.</p>
+
+    <h2>7. Tell us when something doesn't work</h2>
+    <p>If any part of Bauble or this site is difficult or impossible for you to use, we want to hear about it — including small things. Reports from people who actually rely on these features are worth more to us than any checklist.</p>
+    <p><strong>Email:</strong> <a href="mailto:bauble.the.app@gmail.com">bauble.the.app@gmail.com</a></p>
+    <p>It helps if you can tell us what you were trying to do, which page or screen you were on, and what assistive technology and iOS or browser version you were using — but please don't let missing details stop you from writing. A one-line "the quiz buttons aren't labeled" is a perfectly good bug report.</p>
+    <p><strong>What to expect:</strong> we aim to acknowledge accessibility reports within 5 business days and to tell you either when a fix will ship or why it will take longer. Bauble is built by one developer, so we cannot promise an immediate fix for everything — but we will always give you a straight answer, and accessibility bugs are prioritized above new features.</p>
+    <p>If you need any content on this site — including our <a href="terms.html">Terms of Use</a> or <a href="privacy.html">Privacy Policy</a> — in a different format, ask and we will send it to you in plain text or another format that works for you, at no cost.</p>
+
+    <h2>8. Changes to this statement</h2>
+    <p>We will update this page as we fix the limitations above and as the app changes. The "Last updated" date at the top always reflects the current version. This statement was last reviewed on July 30, 2026.</p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-brand">
+        <img src="assets/wordmark.png" alt="">
+        <span>Bauble</span>
+      </div>
+      <div class="footer-links">
+        <a href="terms.html">Terms of Use</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="accessibility.html">Accessibility</a>
+        <a href="mailto:bauble.the.app@gmail.com">Contact</a>
+      </div>
+      <span class="footer-copy">&copy; 2026 Bauble</span>
+    </div>
+  </footer>
+
+</body>
+</html>

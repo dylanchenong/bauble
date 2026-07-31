@@ -6,7 +6,9 @@ question about it.
 
 Static HTML/CSS/JS, no build step. Served via GitHub Pages from the root of
 `main`. Legal pages (`terms.html`, `privacy.html`) are generated from the
-Markdown sources kept in the app's main repository.
+Markdown sources kept in the app's main repository. `accessibility.html` is
+maintained here directly — keep its claims in sync with what the app actually
+ships.
 
 To preview locally:
 

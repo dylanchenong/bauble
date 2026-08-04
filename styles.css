@@ -201,6 +201,11 @@ a { color: inherit; }
   padding: 7px 14px;
   white-space: nowrap;
 }
+a.pill {
+  text-decoration: none;
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+a.pill:hover { border-color: var(--gold); background: var(--gold-soft); }
 
 @media (max-width: 760px) {
   .nav-links { display: none; }
@@ -250,23 +255,17 @@ a { color: inherit; }
   gap: 20px;
   flex-wrap: wrap;
 }
-.btn-gold {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-family: var(--font-mono);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--ink-navy);
-  background: var(--gold);
-  border: none;
-  border-radius: 6px;
-  padding: 15px 24px;
-  cursor: default;
-  box-shadow: 0 8px 24px -8px rgba(201, 162, 39, 0.5);
+/* Apple's official badge artwork — never recolour, crop, or add to the SVG
+   itself; hover treatment lives on the link wrapper only. */
+.btn-badge {
+  display: inline-block;
+  line-height: 0;
+  border-radius: 8px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
 }
+.btn-badge img { display: block; height: 40px; width: auto; }
+.btn-badge:hover { transform: translateY(-2px); opacity: 0.9; }
+
 .btn-ghost {
   font-family: var(--font-mono);
   font-size: 12px;

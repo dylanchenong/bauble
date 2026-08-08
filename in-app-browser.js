@@ -120,4 +120,24 @@
     e.preventDefault();
     open(link.href, link);
   });
+
+  /* Pages that opt in with data-auto-open raise the panel on load rather than
+     waiting for a tap, so the dead button is never the first thing tried. Only
+     the homepage does this — an unbidden modal over the legal pages would be
+     hostile to anyone reading them, App Store reviewers included. */
+  var tag = document.querySelector('script[src*="in-app-browser.js"]');
+  if (!tag || !tag.hasAttribute('data-auto-open')) return;
+
+  var first = document.querySelector('a[href*="apps.apple.com"]');
+  if (!first) return;
+
+  // Once per tab: seeing it again on every back-navigation would be nagging.
+  var SEEN = 'bauble-iab-seen';
+  try {
+    if (sessionStorage.getItem(SEEN)) return;
+    sessionStorage.setItem(SEEN, '1');
+  } catch (e) { /* storage blocked — fall through and show it */ }
+
+  // Let the page paint first; an instant modal reads as a broken load.
+  setTimeout(function () { open(first.href, null); }, 400);
 })();

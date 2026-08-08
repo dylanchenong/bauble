@@ -75,10 +75,7 @@
     dialog.innerHTML =
       '<div class="iab-panel" role="dialog" aria-modal="true" aria-labelledby="iabTitle" aria-describedby="iabBody">' +
         '<h2 class="iab-title" id="iabTitle">' + app + ' can&rsquo;t open the App&nbsp;Store</h2>' +
-        '<p class="iab-body" id="iabBody">Its built-in browser can&rsquo;t hand links to the App&nbsp;Store. ' +
-          'Tap the <span class="iab-dots">&middot;&middot;&middot;</span> menu, then <strong>Open in browser</strong> &mdash; ' +
-          'the download works normally there.</p>' +
-        '<p class="iab-alt">Or press and hold this link and choose <strong>Open</strong>:</p>' +
+        '<p class="iab-alt" id="iabBody">Press and hold this link and choose <strong>Open</strong>:</p>' +
         '<a class="iab-link" href="' + url + '">Bauble on the App Store</a>' +
         '<div class="iab-actions">' +
           '<button type="button" class="iab-btn iab-btn-primary" data-iab-copy><span data-iab-copy-label>Copy link</span></button>' +

@@ -982,32 +982,14 @@ body.iab-locked { overflow: hidden; }
   line-height: 1.25;
   color: var(--ink-navy);
 }
-.iab-body, .iab-alt {
-  margin: 0 0 14px;
+.iab-alt {
+  margin: 0 0 8px;
   font-family: var(--font-body);
   font-size: 14.5px;
   line-height: 1.55;
   color: var(--ink-text);
 }
-.iab-body strong, .iab-alt strong { font-weight: 600; }
-.iab-alt {
-  margin-top: 18px;
-  padding-top: 16px;
-  border-top: 1px solid var(--parchment-line);
-  margin-bottom: 8px;
-}
-
-/* Mirrors the "..." affordance in the host app's toolbar. */
-.iab-dots {
-  font-family: var(--font-mono);
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  padding: 1px 6px;
-  border: 1px solid var(--parchment-line);
-  border-radius: 5px;
-  background: var(--gold-soft);
-  color: var(--gold-text);
-}
+.iab-alt strong { font-weight: 600; }
 
 .iab-link {
   display: inline-block;

@@ -3,28 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script>
-    // iPhone visitors go straight to the App Store — once per tab, and never when
-    // they've asked for a specific section or opted out with ?stay=1.
-    (function () {
-      var APP_STORE = 'https://apps.apple.com/us/app/bauble-screentime-flashcards/id6789819513';
-      var KEY = 'bauble-redirected';
-
-      if (!/iPhone|iPod/.test(navigator.userAgent)) return;   // iPad and Android stay on the site
-      if (location.hash) return;                              // deep link to #mcat, #faq, etc.
-      if (/(?:^|[?&])stay=1(?:&|$)/.test(location.search)) return;
-
-      try {
-        if (sessionStorage.getItem(KEY)) return;              // already sent this tab
-        sessionStorage.setItem(KEY, '1');
-      } catch (e) {
-        // Storage blocked. Still redirect, but replace the history entry so Back can't loop.
-        location.replace(APP_STORE);
-        return;
-      }
-      location.href = APP_STORE;
-    })();
-  </script>
   <title>Bauble — Learn facts, earn screen time</title>
   <meta name="description" content="Bauble blocks your distracting apps on rules you set. Learn a fact, answer one question, earn your screen time. Includes a 401-card MCAT Psych/Soc pack and Anki deck import.">
   <meta property="og:title" content="Bauble — Learn facts, earn screen time">

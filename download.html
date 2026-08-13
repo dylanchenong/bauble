@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Bauble</title>
+  <meta name="description" content="Download Bauble on the App Store.">
+  <meta name="theme-color" content="#14213D">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://apps.apple.com/us/app/bauble-screentime-flashcards/id6789819513">
+  <link rel="icon" type="image/png" href="assets/app-icon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <!-- Loaded blocking, ahead of the stylesheet, on purpose: in a normal browser
+       download() replaces the document before anything paints, so nobody sees
+       this page at all. Deferring it would show a flash of the interstitial to
+       exactly the people who should never see it. -->
+  <script src="in-app-browser.js"></script>
+  <script>
+    (function () {
+      var store = 'https://apps.apple.com/us/app/bauble-screentime-flashcards/id6789819513';
+      // If the module failed to load, still get normal browsers to the store
+      // rather than stranding everyone on an interstitial they can't use.
+      if (window.InAppBrowser) InAppBrowser.download(store);
+      else location.replace(store);
+    })();
+  </script>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dl-body">
+
+  <!-- Only in-app-browser visitors ever get this far. Whole page is a trigger:
+       the tap target is everything, the button just says where to aim. -->
+  <main class="dl-screen">
+    <img class="dl-logo" src="assets/app-icon.png" alt="" width="88" height="88">
+    <h1 class="dl-title">Bauble</h1>
+    <a class="dl-cta" href="https://apps.apple.com/us/app/bauble-screentime-flashcards/id6789819513">
+      Get the app
+    </a>
+    <p class="dl-note">Opens the App&nbsp;Store</p>
+  </main>
+
+</body>
+</html>

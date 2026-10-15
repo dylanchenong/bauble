@@ -1,37 +1,51 @@
 /* ============================================================
    Bauble — card system
-   Palette (exact tokens from the app spec):
-   ink-navy #14213D · parchment #EFE6D8 · gold #C9A227
-   moss #4C6444 · ember #E1603D · ash #8B8378
+   Panda palette:
+   panda-ink #1E1C1A · paper #F0EDE6 · app navy #14213D
+   lifted navy #7C97C9 · link blue #2E4F8F · ember #E1603D · ash #69635B
+
+   The token names below (--ink-navy, --gold) are historical — they are
+   the slots the whole sheet is wired to, so the panda theme repaints
+   their values rather than renaming ~200 usages.
    ============================================================ */
 
 :root {
-  --ink-navy: #14213D;
-  --ink-deep: #0D1730;
-  --parchment: #EFE6D8;
-  --parchment-bright: #F6EFE3;
-  --parchment-line: #D9CDB6;
-  --gold: #C9A227;
-  --gold-soft: rgba(201, 162, 39, 0.14);
-  /* Gold reads at 6.6:1 on navy but only 2.0:1 on parchment, so text-on-light
-     uses a darkened gold; --gold stays for dark grounds, rules, and icons. */
-  --gold-text: #796117;
-  --moss: #4C6444;
+  --ink-navy: #1E1C1A;
+  --ink-deep: #121110;
+  --parchment: #F0EDE6;
+  --parchment-bright: #FAF8F4;
+  --parchment-line: #DCD7CC;
+  /* The app's navy is 1.06:1 on panda ink — invisible — so the accent is
+     split by ground: --gold-text is the app's own #14213D for anything on
+     paper, --gold is that navy lifted until it clears 4.5:1 on the dark. */
+  --gold: #7C97C9;
+  --gold-soft: rgba(124, 151, 201, 0.14);
+  --gold-text: #14213D;
+  /* tint of the app navy, for fills and borders on light grounds */
+  --navy-soft: rgba(20, 33, 61, 0.07);
+  /* links and secondary marks on paper — blue enough to read as a link
+     next to the near-black body text, which the full navy is not */
+  --moss: #2E4F8F;
+  /* one focus ring for both grounds: 3.8:1 on ink, 3.75:1 on paper */
+  --focus: #5878B8;
   --ember: #E1603D;
   /* Muted greys, split by ground so both clear 4.5:1 for small text. */
   --ash: #69635B;
-  --ash-on-dark: #938C82;
+  --ash-on-dark: #9C958B;
   --ink-text: #232323;
-  --navy-text: #C8CEDD;
+  --navy-text: #CFC9C0;
 
   --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
   --font-body: "Inter", -apple-system, "Helvetica Neue", sans-serif;
   --font-mono: "Space Mono", "SF Mono", Menlo, monospace;
 
+  /* paw silhouette, for mask-image accents */
+  --paw-mask: url("data:image/svg+xml,<svg xmlns='http%3A//www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23000'><ellipse cx='7.1' cy='7.6' rx='2.5' ry='3.1'/><ellipse cx='13.1' cy='5.6' rx='2.4' ry='3.2'/><ellipse cx='18.6' cy='8.6' rx='2.3' ry='2.9'/><ellipse cx='21.1' cy='14.4' rx='2.1' ry='2.5'/><path d='M12.9 11.3c3 0 6.2 2.6 6.2 5.6 0 2.4-2 3.9-4.4 3.9-1.3 0-2.2-.5-3.4-.5s-2.1.6-3.4.6c-2.4 0-4.3-1.5-4.3-3.9 0-3.1 3.2-5.7 6.2-5.7z'/></svg>");
+
   --container: 1100px;
   --radius: 10px;
-  --shadow-card: 0 1px 2px rgba(20, 33, 61, 0.10), 0 10px 30px -12px rgba(20, 33, 61, 0.25);
-  --shadow-lift: 0 2px 4px rgba(20, 33, 61, 0.12), 0 22px 44px -16px rgba(20, 33, 61, 0.35);
+  --shadow-card: 0 1px 2px rgba(30, 28, 26, 0.10), 0 10px 30px -12px rgba(30, 28, 26, 0.25);
+  --shadow-lift: 0 2px 4px rgba(30, 28, 26, 0.12), 0 22px 44px -16px rgba(30, 28, 26, 0.35);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -59,7 +73,7 @@ a { color: inherit; }
 
 /* ---------- keyboard access ---------- */
 :focus-visible {
-  outline: 2px solid var(--gold);
+  outline: 2px solid var(--focus);
   outline-offset: 3px;
   border-radius: 3px;
 }
@@ -109,7 +123,7 @@ a { color: inherit; }
   content: "";
   width: 34px;
   height: 1px;
-  background: var(--gold);
+  background: currentColor;
   opacity: 0.7;
 }
 
@@ -134,10 +148,10 @@ a { color: inherit; }
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(13, 23, 48, 0.88);
+  background: rgba(18, 17, 16, 0.88);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(201, 162, 39, 0.22);
+  border-bottom: 1px solid rgba(124, 151, 201, 0.22);
 }
 .site-nav .container {
   display: flex;
@@ -151,7 +165,7 @@ a { color: inherit; }
   gap: 11px;
   text-decoration: none;
 }
-.brand img { width: 26px; height: 26px; }
+.brand img { width: 28px; height: 28px; }
 .brand span {
   font-family: var(--font-display);
   font-weight: 600;
@@ -196,7 +210,7 @@ a { color: inherit; }
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--gold);
-  border: 1px solid rgba(201, 162, 39, 0.55);
+  border: 1px solid rgba(124, 151, 201, 0.55);
   border-radius: 999px;
   padding: 7px 14px;
   white-space: nowrap;
@@ -216,8 +230,8 @@ a.pill:hover { border-color: var(--gold); background: var(--gold-soft); }
    ============================================================ */
 .hero {
   background:
-    radial-gradient(1100px 520px at 78% -10%, rgba(201, 162, 39, 0.13), transparent 60%),
-    radial-gradient(900px 500px at 8% 110%, rgba(76, 100, 68, 0.18), transparent 60%),
+    radial-gradient(1100px 520px at 78% -10%, rgba(124, 151, 201, 0.13), transparent 60%),
+    radial-gradient(900px 500px at 8% 110%, rgba(46, 79, 143, 0.22), transparent 60%),
     linear-gradient(180deg, var(--ink-deep) 0%, var(--ink-navy) 100%);
   color: var(--parchment);
   overflow: hidden;
@@ -274,7 +288,7 @@ a.pill:hover { border-color: var(--gold); background: var(--gold-soft); }
   text-transform: uppercase;
   color: var(--parchment);
   text-decoration: none;
-  border-bottom: 1px solid rgba(239, 230, 216, 0.35);
+  border-bottom: 1px solid rgba(240, 237, 230, 0.35);
   padding-bottom: 3px;
   transition: border-color 0.25s ease, color 0.25s ease;
 }
@@ -332,7 +346,8 @@ a.pill:hover { border-color: var(--gold); background: var(--gold-soft); }
   color: var(--ash);
   margin-bottom: 16px;
 }
-.card-meta .dot { color: var(--gold); }
+.card-meta .dot { color: var(--gold-text); }
+.card-meta .dot .leaf { width: 12px; height: 12px; vertical-align: -2px; }
 .card-face .card-title {
   font-family: var(--font-display);
   font-size: 23px;
@@ -369,8 +384,8 @@ a.pill:hover { border-color: var(--gold); background: var(--gold-soft); }
 }
 .choice:last-child { margin-bottom: 0; }
 .choice.correct-picked {
-  border-color: var(--gold);
-  background: var(--gold-soft);
+  border-color: var(--gold-text);
+  background: var(--navy-soft);
   color: var(--ink-navy);
   font-weight: 600;
 }
@@ -414,7 +429,7 @@ a.pill:hover { border-color: var(--gold); background: var(--gold-soft); }
   font-size: 12px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--moss);
+  color: var(--gold-text);
   opacity: 0;
   transition: opacity 0.4s ease 1.35s;
 }
@@ -479,15 +494,21 @@ section { padding: 96px 0; }
   transition: transform 0.3s cubic-bezier(0.2, 0.7, 0.3, 1), box-shadow 0.3s ease;
 }
 .step-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lift); }
+/* the panda's paw — one palm pad and four toes, inheriting currentColor
+   so it takes the ground's accent wherever it lands */
+.paw { width: 1em; height: 1em; flex-shrink: 0; }
+
 .step-no {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
   font-family: var(--font-mono);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.22em;
   color: var(--gold-text);
-  border: 1px solid rgba(201, 162, 39, 0.5);
+  border: 1px solid rgba(20, 33, 61, 0.35);
   border-radius: 4px;
-  display: inline-block;
   padding: 4px 9px;
   margin-bottom: 18px;
 }
@@ -528,7 +549,7 @@ section { padding: 96px 0; }
   border: 1px solid var(--parchment-line);
   border-radius: 8px;
   background: var(--parchment-bright);
-  color: var(--moss);
+  color: var(--gold-text);
   margin-bottom: 16px;
 }
 .feature .icon svg { width: 20px; height: 20px; }
@@ -571,11 +592,11 @@ section { padding: 96px 0; }
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--moss);
-  border: 1px solid rgba(76, 100, 68, 0.4);
+  color: var(--gold-text);
+  border: 1px solid rgba(20, 33, 61, 0.3);
   border-radius: 999px;
   padding: 6px 12px;
-  background: rgba(76, 100, 68, 0.07);
+  background: var(--navy-soft);
 }
 
 .mcat-stat {
@@ -625,8 +646,8 @@ section { padding: 96px 0; }
 .sample-card .explain {
   margin-top: 14px;
   padding: 12px 14px;
-  border-left: 3px solid var(--moss);
-  background: rgba(76, 100, 68, 0.07);
+  border-left: 3px solid var(--gold-text);
+  background: var(--navy-soft);
   border-radius: 0 7px 7px 0;
   font-size: 13px;
   line-height: 1.6;
@@ -644,20 +665,20 @@ section { padding: 96px 0; }
   gap: 14px;
   align-items: flex-start;
   padding: 13px 0;
-  border-bottom: 1px solid rgba(239, 230, 216, 0.12);
+  border-bottom: 1px solid rgba(240, 237, 230, 0.12);
   font-size: 15px;
   color: var(--navy-text);
 }
 .anki-list li:last-child { border-bottom: none; }
 .anki-list li strong { color: var(--parchment); font-weight: 600; }
 .anki-list .li-icon { color: var(--gold); flex-shrink: 0; margin-top: 3px; }
-.anki-list .li-icon svg { width: 17px; height: 17px; }
+.anki-list .li-icon svg { width: 16px; height: 16px; }
 .anki-list code {
   font-family: var(--font-mono);
   font-size: 12.5px;
   color: var(--gold);
-  background: rgba(201, 162, 39, 0.1);
-  border: 1px solid rgba(201, 162, 39, 0.3);
+  background: rgba(124, 151, 201, 0.1);
+  border: 1px solid rgba(124, 151, 201, 0.3);
   border-radius: 4px;
   padding: 1px 5px;
 }
@@ -674,8 +695,8 @@ section { padding: 96px 0; }
   font-size: 12px;
   letter-spacing: 0.06em;
   color: var(--parchment);
-  background: rgba(239, 230, 216, 0.08);
-  border: 1px solid rgba(239, 230, 216, 0.25);
+  background: rgba(240, 237, 230, 0.08);
+  border: 1px solid rgba(240, 237, 230, 0.25);
   border-radius: 8px;
   padding: 11px 16px;
   box-shadow: 0 14px 30px -12px rgba(0,0,0,0.5);
@@ -808,7 +829,7 @@ section { padding: 96px 0; }
    ============================================================ */
 .closing {
   background:
-    radial-gradient(900px 420px at 50% -20%, rgba(201, 162, 39, 0.15), transparent 65%),
+    radial-gradient(900px 420px at 50% -20%, rgba(124, 151, 201, 0.15), transparent 65%),
     linear-gradient(180deg, var(--ink-navy) 0%, var(--ink-deep) 100%);
   color: var(--parchment);
   text-align: center;
@@ -830,15 +851,17 @@ section { padding: 96px 0; }
 .closing .eyebrow { justify-content: center; }
 .closing .eyebrow::after {
   content: "";
-  width: 34px; height: 1px;
+  width: 13px; height: 13px;
   background: var(--gold);
-  opacity: 0.7;
+  opacity: 0.85;
+  -webkit-mask: var(--paw-mask) center / contain no-repeat;
+  mask: var(--paw-mask) center / contain no-repeat;
 }
 
 .site-footer {
   background: var(--ink-deep);
   color: var(--ash-on-dark);
-  border-top: 1px solid rgba(239, 230, 216, 0.1);
+  border-top: 1px solid rgba(240, 237, 230, 0.1);
   padding: 40px 0;
 }
 .site-footer .container {
@@ -849,7 +872,7 @@ section { padding: 96px 0; }
   flex-wrap: wrap;
 }
 .footer-brand { display: flex; align-items: center; gap: 10px; }
-.footer-brand img { width: 20px; height: 20px; opacity: 0.9; }
+.footer-brand img { width: 22px; height: 22px; opacity: 0.9; }
 .footer-brand span {
   font-family: var(--font-display);
   font-size: 17px;
@@ -920,7 +943,7 @@ section { padding: 96px 0; }
 .legal-doc ul { margin: 0 0 16px 22px; }
 .legal-doc li { margin-bottom: 9px; font-size: 16px; color: #3B372F; }
 .legal-doc strong { color: var(--ink-navy); }
-.legal-doc a { color: var(--moss); text-decoration-color: rgba(76,100,68,0.4); }
+.legal-doc a { color: var(--moss); text-decoration-color: rgba(46,79,143,0.4); }
 .legal-doc a:hover { color: var(--gold-text); }
 .legal-doc hr {
   border: none;
@@ -959,7 +982,7 @@ section { padding: 96px 0; }
   align-items: center;
   justify-content: center;
   padding: 20px;
-  background: rgba(13, 23, 48, 0.62);
+  background: rgba(18, 17, 16, 0.62);
 }
 .iab-backdrop.is-open { display: flex; }
 body.iab-locked { overflow: hidden; }
@@ -1057,8 +1080,8 @@ body.iab-locked { overflow: hidden; }
   text-align: center;
   cursor: pointer;
   background:
-    radial-gradient(120% 80% at 50% 0%, rgba(201, 162, 39, 0.20), transparent 62%),
-    linear-gradient(168deg, #1B2C50 0%, var(--ink-navy) 46%, var(--ink-deep) 100%);
+    radial-gradient(120% 80% at 50% 0%, rgba(124, 151, 201, 0.20), transparent 62%),
+    linear-gradient(168deg, #2A2724 0%, var(--ink-navy) 46%, var(--ink-deep) 100%);
 }
 
 .dl-logo {

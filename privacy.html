@@ -35,8 +35,8 @@
   <main class="legal-doc" id="main" tabindex="-1">
     <span class="eyebrow">Legal</span>
     <h1>Bauble Privacy Policy</h1>
-    <p class="effective">Effective date: August 7, 2026</p>
-    <p>This Privacy Policy describes how Bauble ("Bauble," "the app," "we," "us") collects, uses, and protects information when you use the Bauble iOS application. Bauble is designed to be offline-first and to collect the minimum data necessary to operate. We do not sell your data, we do not show ads, and we do not use third-party analytics or advertising SDKs.</p>
+    <p class="effective">Effective date: October 19, 2026</p>
+    <p>This Privacy Policy describes how Bauble ("Bauble," "the app," "we," "us") collects, uses, and protects information when you use the Bauble iOS application. Bauble is designed to be offline-first and to collect the minimum data necessary to operate. We do not sell your data and we do not show ads. The app includes one third-party component, Meta's app-events software, used only to measure whether our own ads on Meta's platforms led to an install (Section 3.7). We do not use any other third-party analytics or advertising SDKs.</p>
     <p>Please read this policy carefully. By using Bauble, you agree to the practices described here. If you do not agree, please do not use the app.</p>
     <hr>
     <h2>1. Summary (plain language)</h2>
@@ -46,8 +46,9 @@
       <li><strong>An account is optional for the core experience.</strong> If you sign in with Apple, we store your account identifier, optionally your name, and a backup of your fact collection and quiz history so it can be restored across devices.</li>
       <li><strong>If you subscribe to Bauble Premium</strong>, Apple processes the payment. We receive subscription status information from Apple (such as product and expiration date) so we can unlock premium features. We never receive your payment card details.</li>
       <li><strong>If you use the optional feedback board</strong>, it is hosted by a third party (Featurebase), and posts you make there are public. Signing in first attaches your profile name to your posts; you can also use it without signing in.</li>
-      <li><strong>We look at synced data only in aggregate</strong> (for example, which fact packs are hardest) to improve the app. There is no tracking SDK, no advertising ID, and no per-user profiling.</li>
+      <li><strong>We look at synced data only in aggregate</strong> (for example, which fact packs are hardest) to improve the app. We never access your device's advertising identifier and do no per-user profiling.</li>
       <li><strong>The only thing we receive if you never sign in</strong> is a one-time install count: on first launch the app sends a random identifier and nothing else, so we can tell how many people have installed Bauble. It is not linked to you, your account, or your device's identity.</li>
+      <li><strong>To measure our own advertising</strong>, the app tells Meta when it is opened, along with basic device and app information, so we can see how many installs our ads on Facebook and Instagram produced. The app never asks for permission to track you, never accesses your advertising identifier, and never sends Meta your account, quiz, or Screen Time data (Section 3.7).</li>
       <li><strong>You can delete your account and all associated server data at any time, directly in the app.</strong></li>
     </ul>
     <h2>2. Information stored only on your device</h2>
@@ -61,9 +62,9 @@
       <li><strong>Spaced-repetition study data.</strong> Card schedules and review logs for flashcard study.</li>
       <li><strong>App settings.</strong> Unlock duration, appearance preferences, and similar configuration.</li>
     </ul>
-    <p>If you never sign in, everything in Sections 3.1 to 3.5 below also stays on your device only. The single exception is the install count described in Section 3.6, which contains no personal information.</p>
+    <p>If you never sign in, everything in Sections 3.1 to 3.5 below also stays on your device only. The exceptions are the install count described in Section 3.6, which contains no personal information, and the advertising measurement described in Section 3.7.</p>
     <h2>3. Information collected on our servers</h2>
-    <p>Signing in is optional. If you choose to sign in with Apple, we collect and store the following on our servers (Sections 3.1 to 3.5). Section 3.6 describes the one piece of information the app sends whether or not you ever sign in.</p>
+    <p>Signing in is optional. If you choose to sign in with Apple, we collect and store the following on our servers (Sections 3.1 to 3.5). Sections 3.6 and 3.7 describe the information the app sends whether or not you ever sign in.</p>
     <h3>3.1 Account information</h3>
     <ul>
       <li><strong>Account identifier.</strong> A unique identifier issued when you sign in with Apple, used to associate your data with your account.</li>
@@ -97,7 +98,7 @@
     <h3>3.5 Support and diagnostics</h3>
     <ul>
       <li><strong>Support email.</strong> If you email us, we receive your email address and the contents of your message, and retain the correspondence as long as needed to handle your request.</li>
-      <li><strong>Apple diagnostics.</strong> The app contains no crash-reporting or analytics SDKs. If you have opted in (in iOS Settings) to share diagnostics with app developers, Apple may provide us crash reports and aggregated usage statistics through App Store Connect; these are not linked to your Bauble account.</li>
+      <li><strong>Apple diagnostics.</strong> The app contains no crash-reporting or analytics SDKs (Meta's software, Section 3.7, is used only for advertising measurement). If you have opted in (in iOS Settings) to share diagnostics with app developers, Apple may provide us crash reports and aggregated usage statistics through App Store Connect; these are not linked to your Bauble account.</li>
     </ul>
     <h3>3.6 Install count (no account required)</h3>
     <p>The first time you open Bauble after installing it, the app sends us a single record so that we can count how many installations there have been. <strong>This applies whether or not you ever sign in.</strong> The record contains:</p>
@@ -107,6 +108,15 @@
     </ul>
     <p>That is the entire record. It contains no name, email, account identifier, device model, device identifier, advertising identifier, IP-derived profile, location, or usage information, and it is never combined with your account data or with information from any other source. The identifier is generated locally, is unique to that installation of the app, and is used for nothing except counting and de-duplicating installs. It is stored on your device only for as long as the app is installed: if you delete Bauble, the identifier is deleted with it, and a later reinstall generates a new one (and is therefore counted again).</p>
     <p>We send this once per installation. If the request fails — for example, because you first opened the app offline — the app retries on a later launch and stops as soon as it succeeds.</p>
+    <h3>3.7 Advertising measurement (Meta)</h3>
+    <p>We advertise Bauble on Meta's platforms (Facebook and Instagram). To learn how many installs those ads produce, and so Meta can show our ads to people likely to install, the app includes Meta's app-events software (the Facebook SDK), configured to do as little as possible:</p>
+    <ul>
+      <li><strong>What is sent.</strong> Each time the app is opened, it sends Meta an "app activated" event. Meta's software attaches basic technical information to it — such as device model, operating system version, language and time-zone settings, app version, and an identifier generated by Meta's software for this installation — and Meta receives your IP address as part of the connection. <strong>This applies whether or not you ever sign in.</strong></li>
+      <li><strong>What is never sent.</strong> Your name, email, Bauble account identifier, fact collection, quiz history, subscription details, or any Screen Time data (which apps you block or use, and when). No other in-app activity is reported.</li>
+      <li><strong>No tracking permission, no advertising identifier.</strong> The app never asks for permission to track you under Apple's App Tracking Transparency, and Meta's software is configured never to access your device's advertising identifier. Install attribution relies on Apple's privacy-preserving SKAdNetwork framework, which reports ad results to Meta only in aggregate, and on Meta's aggregated measurement.</li>
+      <li><strong>Limited Data Use.</strong> We enable Meta's Limited Data Use setting, under which Meta processes this information as our service provider where U.S. state privacy laws (such as California's) apply.</li>
+    </ul>
+    <p>Meta processes this information under its own Data Policy (<a href="https://www.facebook.com/privacy/policy/">https://www.facebook.com/privacy/policy/</a>). Information Meta receives is governed by Meta's retention practices, not ours, and we do not receive it back in identifiable form — we see only aggregate campaign results.</p>
     <h2>4. Screen Time and Family Controls disclosure</h2>
     <p>Bauble uses Apple's Family Controls, Managed Settings, and Device Activity frameworks to block apps and websites you select, on schedules you set.</p>
     <ul>
@@ -122,19 +132,21 @@
       <li>Create and maintain your account and authenticate you;</li>
       <li>Back up and restore your fact collection and quiz history across your devices;</li>
       <li>Verify and maintain your subscription entitlement and deliver premium features;</li>
-      <li>Understand, <strong>in aggregate only</strong>, how the service is used — for example, how many accounts are active, which fact packs are attempted most, and which quiz questions are answered incorrectly most often — so we can improve content and features. These statistics are computed on our servers from the synced data described in Sections 3.1 to 3.5 and the install count described in Section 3.6 only; they involve no additional tracking, no third-party analytics SDKs, and no advertising identifiers, and the aggregate outputs are not accessible from the app;</li>
+      <li>Understand, <strong>in aggregate only</strong>, how the service is used — for example, how many accounts are active, which fact packs are attempted most, and which quiz questions are answered incorrectly most often — so we can improve content and features. These statistics are computed on our servers from the synced data described in Sections 3.1 to 3.5 and the install count described in Section 3.6 only; they involve no additional tracking and no advertising identifiers, and the aggregate outputs are not accessible from the app;</li>
+      <li>Measure, in aggregate, how many installs our own ads on Meta's platforms produce, and help Meta deliver those ads to people likely to install (Section 3.7);</li>
       <li>Operate the optional feedback board and sign you in to it (Section 3.4);</li>
       <li>Respond to support requests you send us;</li>
       <li>Maintain the security and integrity of our service, including fraud prevention for purchases;</li>
       <li>Comply with legal obligations.</li>
     </ul>
-    <p>We do <strong>not</strong> use your information for advertising, profiling, or automated decision-making that produces legal or similarly significant effects. We do not sell or rent personal information to anyone, and we do not "share" personal information for cross-context behavioral advertising as defined under California law.</p>
-    <p><strong>Legal bases (for users in the EEA, UK, and similar jurisdictions):</strong> we process account and sync data to perform our contract with you (providing the service you signed up for); subscription records to perform our contract and to comply with legal and accounting obligations; aggregate usage statistics and security-related processing under our legitimate interest in improving and protecting the service; and feedback-board sign-in to perform our contract when you choose to use that feature. Where consent is the applicable basis, you may withdraw it at any time.</p>
+    <p>Other than the advertising measurement described in Section 3.7, we do <strong>not</strong> use your information for advertising, and we never use it for profiling or automated decision-making that produces legal or similarly significant effects. We do not sell or rent personal information to anyone. Because Meta acts as our service provider under its Limited Data Use setting where California law applies, we do not "share" personal information for cross-context behavioral advertising as defined under California law.</p>
+    <p><strong>Legal bases (for users in the EEA, UK, and similar jurisdictions):</strong> we process account and sync data to perform our contract with you (providing the service you signed up for); subscription records to perform our contract and to comply with legal and accounting obligations; aggregate usage statistics, advertising measurement (Section 3.7), and security-related processing under our legitimate interest in improving, promoting, and protecting the service; and feedback-board sign-in to perform our contract when you choose to use that feature. Where consent is the applicable basis, you may withdraw it at any time.</p>
     <h2>6. Third-party service providers</h2>
-    <p>We use a small number of service providers ("processors") to operate Bauble. We do not allow them to use your data for their own purposes.</p>
+    <p>We use a small number of service providers ("processors") to operate Bauble. We do not allow them to use your data for their own purposes, except as described for Meta below.</p>
     <ul>
       <li><strong>Supabase</strong> (database, authentication, and serverless functions). Account, profile, collection sync, and subscription entitlement data described in Section 3, along with the install records described in Section 3.6, is stored in our Supabase-hosted database, protected by row-level security so that each account can only access its own data. Supabase's privacy practices are described at <a href="https://supabase.com/privacy">https://supabase.com/privacy</a>.</li>
       <li><strong>Apple Inc.</strong> Sign in with Apple (authentication) and the App Store (payments and subscription management). Apple acts as an independent controller of the data it processes for payments and its own services. Apple's privacy policy is available at <a href="https://www.apple.com/legal/privacy/">https://www.apple.com/legal/privacy/</a>.</li>
+      <li><strong>Meta Platforms, Inc.</strong> (advertising measurement). Receives the app-activation events and technical information described in Section 3.7. Where U.S. state privacy laws apply, Meta processes this information as our service provider under its Limited Data Use setting; elsewhere, Meta may also use it as described in its own Data Policy, available at <a href="https://www.facebook.com/privacy/policy/">https://www.facebook.com/privacy/policy/</a>.</li>
       <li><strong>Featurebase</strong> (optional feedback board). If you use the feedback board, Featurebase hosts it and processes the data described in Section 3.4. Featurebase's privacy policy is available at <a href="https://help.featurebase.app/articles/4744036-privacy-policy">https://help.featurebase.app/articles/4744036-privacy-policy</a>.</li>
     </ul>
     <p>We may disclose information if required to do so by law, regulation, legal process, or enforceable governmental request, or where reasonably necessary to protect the rights, safety, or property of our users, ourselves, or the public.</p>
@@ -146,6 +158,7 @@
       <li><strong>Subscription records</strong> are retained while your account exists; after account deletion, transaction ledger entries are disassociated from your identity and retained only as required for financial auditing, fraud prevention, and legal compliance.</li>
       <li><strong>Support correspondence</strong> is retained as long as needed to handle your request and for a reasonable period afterward.</li>
       <li><strong>Install records</strong> (Section 3.6) are retained as a long-term count of installations. Because they contain no personal information and are not linked to any account, they cannot be traced back to you and are not affected by account deletion.</li>
+      <li><strong>Advertising measurement data</strong> (Section 3.7) is held by Meta and retained under Meta's own retention practices. We receive only aggregate campaign results.</li>
       <li><strong>Feedback board posts</strong> are hosted by Featurebase and are not deleted automatically when you delete your account (Section 3.4); contact us to have them removed.</li>
       <li><strong>Backups</strong> of our database may persist for a limited period after deletion before being overwritten in the ordinary course of operations.</li>
     </ul>
@@ -162,7 +175,7 @@
       <li><strong>Non-discrimination</strong> — we will never discriminate against you for exercising your privacy rights.</li>
     </ul>
     <p>To exercise any of these rights, use the in-app controls or contact us at the address in Section 13. We will verify your request using your signed-in account and respond within the timeframe required by applicable law. If you are in the EEA or UK, you also have the right to lodge a complaint with your local supervisory authority. Authorized agents may submit requests on your behalf where permitted by law, subject to verification.</p>
-    <p><strong>We do not sell personal information and have not done so.</strong> Because we do not sell or share personal information for behavioral advertising, no "Do Not Sell or Share" opt-out is necessary; we also do not process sensitive personal information beyond what is strictly necessary to provide the service. Bauble does not currently respond to browser "Do Not Track" signals because the app does not track users across apps or websites — there is nothing to opt out of. Where required by law (including under Global Privacy Control for applicable web properties), we honor recognized opt-out preference signals.</p>
+    <p><strong>We do not sell personal information and have not done so.</strong> Because we do not sell personal information, and Meta receives the advertising-measurement data in Section 3.7 as our service provider under its Limited Data Use setting, we do not sell or share personal information for behavioral advertising and no "Do Not Sell or Share" opt-out is necessary; we also do not process sensitive personal information beyond what is strictly necessary to provide the service. Bauble does not currently respond to browser "Do Not Track" signals because the app does not track users across apps or websites — there is nothing to opt out of. Where required by law (including under Global Privacy Control for applicable web properties), we honor recognized opt-out preference signals.</p>
     <h2>9. International data transfers</h2>
     <p>Our servers are operated by Supabase and may be located outside your country of residence. Where personal data of users in the EEA, UK, or Switzerland is transferred internationally, we rely on appropriate safeguards such as the European Commission's Standard Contractual Clauses (which Supabase incorporates into its data processing terms) and equivalent mechanisms recognized under applicable law.</p>
     <h2>10. Security</h2>
